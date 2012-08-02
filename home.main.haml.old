@@ -1,0 +1,22 @@
+:each child in children
+  .thing.t3
+    .scoreVote= child.data.score
+    %a{href:child.data.url}
+      %img{src:child.data.thumbnail}
+    .entry
+      %p.title
+        %a{href:child.data.url}
+          =child.data.title
+          %span.domain
+            ( #{child.data.domain} )
+        %p.byLine
+          .Submitted
+            #{child.data.created} by #{child.data.author} to 
+          %a.subRedditLink.internalLink{href:'#!r/'+child.data.subreddit+'/'}
+            =child.data.subreddit
+        %p.actions
+          %span.comment
+            %a.permalinkLink.internalLink{href:'#!r/'+child.data.subreddit+'/comments/'+child.data.id}
+              #{child.data.num_comments} 
+            comments
+            

@@ -1,0 +1,16 @@
+:each originalPost in data.children
+  .originalPost.t3
+    .scoreVote= originalPost.data.score
+    %a{href:originalPost.data.url}
+      %img{src:originalPost.data.thumbnail}
+    .entry
+      %p.title
+        %a{href:originalPost.data.url}
+          =originalPost.data.title
+          %span.domain
+            ( #{originalPost.data.domain} )
+        %p.byLine
+          .Submitted
+            #{originalPost.data.created} by #{originalPost.data.author} to 
+          %a.subRedditLink.internalLink{href:'#!r/'+originalPost.data.subreddit}
+            =originalPost.data.subreddit

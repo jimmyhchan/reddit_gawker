@@ -1,0 +1,80 @@
+:each child in [children[0]]
+  <!--only show the first one ....
+  hide the others inside a button
+  or put it into blog view--> 
+  .thing.t3.topItem
+    .main_media
+      :if child.data.domain == 'i.imgur.com'
+        %img{src:child.data.url}
+      :if child.data.domain == 'imgur.com'
+        %img{src:child.data.url+'.png'}
+      :if child.data.media
+        <!--embed the media and use it as the main thingie ... youtube only? -->
+    %h3.tags
+      %a.subRedditLink.internalLink{href:'#!r/'+child.data.subreddit+'/'}
+        =child.data.subreddit
+      %span.domain
+        ='( '+child.data.domain+' )'
+      %p.score
+        = child.data.score+' score on reddit'
+    %h2.title
+      :if child.data.over_18
+        %span.nsfw 
+          NSFW
+      =child.data.title
+      :if child.data.over_18
+        %span.nsfw
+          HAWT!!
+    .bodyText
+      %span.author= child.data.author+' -- '
+      :if child.data.selftext_html
+        = child.data.selftext_html
+      :if !child.data.selftext_html
+        Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    %p.comment
+      %a.permalinkLink.internalLink{href:'#!r/'+child.data.subreddit+'/comments/'+child.data.id}
+        =child.data.num_comments+ ' ' 
+        :if child.data.num_comments > 1
+          comments
+        :if child.data.num_comments <= 1
+          comment
+
+
+
+:each child in children.slice(1)
+  .thing.t3.lesserItem
+    .main_media
+      :if child.data.domain == 'i.imgur.com'
+        %img{src:child.data.url}
+      :if child.data.domain == 'imgur.com'
+        %img{src:child.data.url+'.png'}
+      :if child.data.media
+        <!--embed the media and use it as the main thingie ... youtube only? -->
+    %h3.tags
+      %a.subRedditLink.internalLink{href:'#!r/'+child.data.subreddit+'/'}
+        =child.data.subreddit
+      %span.domain
+        ='( '+child.data.domain+' )'
+      %p.score
+        = child.data.score+' score on reddit'
+    %h2.title
+      :if child.data.over_18
+        %span.nsfw 
+          NSFW
+      =child.data.title
+      :if child.data.over_18
+        %span.nsfw
+          HAWT!!
+    .bodyText
+      %span.author= child.data.author+' -- '
+      :if child.data.selftext_html
+        = child.data.selftext_html
+      :if !child.data.selftext_html
+        Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    %p.comment
+      %a.permalinkLink.internalLink{href:'#!r/'+child.data.subreddit+'/comments/'+child.data.id}
+        =child.data.num_comments+ ' ' 
+        :if child.data.num_comments > 1
+          comments
+        :if child.data.num_comments <= 1
+          comment

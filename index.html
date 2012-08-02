@@ -1,0 +1,110 @@
+<!doctype html>  
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <base href="http://www.jimmyhchan.com/reddit_gawker/" />
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Reddit -- ugly gawker style</title>
+  <meta name="description" content="reddit in ugly gawker style">
+  <meta name="author" content="jimmyhchan">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+ 
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.6.min.js"></script> </head> <body>
+
+  <div id="container">
+    
+    <section id="main">
+      <header>
+      <a href=""><img id="header_img" alt="reddit cloned" src="http://static.reddit.com/reddit.com.header.png" /></a>
+      <span class="currentSubReddit"></span>
+      </header>
+      <div id="main_content">
+      </div>
+      <nav id="subReddits">
+      </nav>
+      <div id="main_bottom_thingy_that_makes_no_sense">
+          <a href=#"><span>Next Link</span>Title of the next link</a>
+      </div>
+
+
+    </section>
+    <section id="sidebar">
+      <header>
+      <a href="./hot" class="sortLink active">hot</a>
+      <a href="./new" class="sortLink">new</a>
+      <a href="./controversial" class="sortLink">controversial</a>
+      <a href="./top" class="sortLink">top</a>
+      <div class="currentSubReddit"></div>
+      </header>
+      <div id="sidebar_content_wrapper">
+        <div id="sidebar_content">
+        </div>
+      </div>
+      <div id="sidebar_bottom_thingy_that_makes_no_sense">
+          <a class="sidebar_scroll_down" href=#">scroll down</a>
+          <a class="sidebar_scroll_up" href=#">scroll_up</a>
+      </div>
+    </section>
+    
+  </div> <!--! end of #container -->
+
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's mootools. fall back to local if necessary -->
+  <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
+  <script>!window.MooTools && document.write(unescape('%3Cscript src="js/mylibs/mootools-1.3.js"%3E%3C/script%3E'))</script>
+  <script src="js/mylibs/request.jsonp.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/mylibs/fx.scroll.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/mylibs/spinner.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/mylibs/date.js" type="text/javascript" charset="utf-8"></script>
+  
+  
+  
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+  <![endif]-->
+
+  <script src="haml.js"></script>
+  <script src="reddit.js"></script>
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-9847671-8'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+  
+</body>
+</html>

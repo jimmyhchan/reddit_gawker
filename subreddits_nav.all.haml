@@ -1,0 +1,6 @@
+%ul#subRedditsNav.clearfix
+  :each child in children
+    %li.thing.t5
+      %a.internalLink.subRedditLink{href:'#!r/'+child.data.display_name+'/', title:child.data.title}
+        =child.data.display_name
+

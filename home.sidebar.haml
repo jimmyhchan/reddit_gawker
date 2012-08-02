@@ -1,0 +1,23 @@
+:each child in children
+  .thing.t3.clearfix
+    .meta_info
+      %p.domain= child.data.domain
+      %p.postTime= child.data.created_utc
+      %p.comment
+        %a.permalinkLink.internalLink{href:'#!r/'+child.data.subreddit+'/comments/'+child.data.id}
+          =child.data.num_comments+ ' ' 
+          :if child.data.num_comments > 1
+            comments
+          :if child.data.num_comments <= 1
+            comment
+    .entry
+      %a{href:child.data.url, title:'Score: '+child.data.score}
+        %img{src:child.data.thumbnail}
+      %p.title
+        %a{href:child.data.url}
+          =child.data.title
+      %p.byLine
+        %span.Submitted
+          #{} by #{child.data.author} to 
+        %a.subRedditLink.internalLink{href:'#!r/'+child.data.subreddit+'/'}
+          =child.data.subreddit

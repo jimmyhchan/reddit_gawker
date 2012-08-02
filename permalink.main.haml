@@ -1,0 +1,31 @@
+:each originalPost in response[0].data.children
+  .originalPost.t3
+    .scoreVote= originalPost.data.score
+    %a{href:originalPost.data.url}
+      %img{src:originalPost.data.thumbnail}
+    .entry
+      %p.title
+        %a{href:originalPost.data.url}
+          =originalPost.data.title
+          %span.domain
+            ( #{originalPost.data.domain} )
+        %p.byLine
+          .Submitted
+            #{originalPost.data.created} by #{originalPost.data.author} to 
+          %a.subRedditLink.internalLink{href:'#!r/'+originalPost.data.subreddit}
+            =originalPost.data.subreddit
+:each comment in response[1].data.children
+  .comment.t1
+    %p.author= comment.data.author
+    %p.created= comment.data.created
+    %p.body
+      != comment.data.body_html
+    %span.votes #{comment.data.ups} ups and #{comment.data.downs} downs
+    :if comment.data.replies
+      :each reply in comment.data.replies.data.children
+        .comment.t1
+          %p.author= reply.data.author
+          %p.created= reply.data.created
+          %p.body
+            = reply.data.body_html
+          %span.votes #{reply.data.ups} ups and #{reply.data.downs} downs
