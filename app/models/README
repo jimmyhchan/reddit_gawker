@@ -1,0 +1,85 @@
+https://github.com/reddit/reddit/wiki/thing
+Thing
+  -id [string]
+  -name [string]
+  -kind [string]
+  -data [object]
+Listing
+  - data [ a collection of things ]
+  - modhash [string]
+  - before [fullname of listing before || null]
+  - after [fullname of listing after || null]
+Votable
+  - ups [int]
+  - downs [int]
+  - likes [bool || null]
+Created
+  - created localized
+  - created_utc utc version
+
+comment (votable, created)
+  - author
+  - author_flair_css_class
+  - author_flair_text
+  - body [raw text]
+  - body_html formatted and escaped
+  - link_id
+  - parent_id
+  - subreddit e.g. pics
+  - subreddit_id
+link (votable | created)
+  - author
+  - author_flair_css_class
+  - author_flair_text
+  - clicked
+  - domain
+  - hidden
+  - is_self
+  - media 
+  - media_embed
+  - num_comments
+  - over_18
+  - permalink
+  - saved
+  - score
+  - selftext
+  - selftext_html
+  - subreddit e.g. pics
+  - subreddit_id
+  - thumbnail
+  - title
+  - url
+subreddit
+  - description
+  - display_name
+  - over18
+  - subscribers
+  - title
+  - url e.g. /r/pics
+message (created)
+  - author
+  - body
+  - body_html
+  - context
+  - first_message
+  - name
+  - new
+  - parent_id
+  - replies
+  - subject
+  - subreddit
+  - was_comment
+account
+  - comment_karma
+  - created  (implements created???)
+  - created_utc
+  - has_mail
+  - has_mod_mail
+  - id
+  - is_gold
+  - is_mod
+  - link_karma
+  - modhash
+  - name
+more
+  childre [ a array of ids ]
