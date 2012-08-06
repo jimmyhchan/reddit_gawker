@@ -1,0 +1,2 @@
+var Listing = Thing.extend({
+});

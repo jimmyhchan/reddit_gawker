@@ -8,7 +8,6 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <base href="http://www.jimmyhchan.com/reddit_gawker/" />
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
        Remove this if you use the .htaccess -->
@@ -75,14 +74,11 @@
 
   <!-- Javascript at the bottom for fast page loading -->
 
-  <!-- Grab Google CDN's mootools. fall back to local if necessary -->
-  <script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script>
-  <script>!window.MooTools && document.write(unescape('%3Cscript src="js/mylibs/mootools-1.3.js"%3E%3C/script%3E'))</script>
-  <script src="js/mylibs/request.jsonp.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/mylibs/fx.scroll.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/mylibs/spinner.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/mylibs/date.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/libs/underscore.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/libs/backbone.js" type="text/javascript" charset="utf-8"></script>
   
+  <script src="app/models/thing.js" type="text/javascript" charset="utf-8"></script>
+  <script src="app/models/listing.js" type="text/javascript" charset="utf-8"></script>
   
   
   <!--[if lt IE 7 ]>
@@ -90,21 +86,20 @@
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
   <![endif]-->
 
-  <script src="haml.js"></script>
-  <script src="reddit.js"></script>
+  <!-- <script src="reddit.js"></script> -->
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
-  <script>
-   var _gaq = [['_setAccount', 'UA-9847671-8'], ['_trackPageview']];
-   (function(d, t) {
-    var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.async = true;
-    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g, s);
-   })(document, 'script');
-  </script>
+  <!-- <script> -->
+   <!-- var _gaq = [['_setAccount', 'UA-9847671-8'], ['_trackPageview']]; -->
+   <!-- (function(d, t) { -->
+    <!-- var g = d.createElement(t), -->
+        <!-- s = d.getElementsByTagName(t)[0]; -->
+    <!-- g.async = true; -->
+    <!-- g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; -->
+    <!-- s.parentNode.insertBefore(g, s); -->
+   <!-- })(document, 'script'); -->
+  <!-- </script> -->
   
 </body>
 </html>
